@@ -21,3 +21,33 @@ aws.dynamodb.secret-key=
 ## 4. 주의사항
 ClassLoader와 관련된 이슈가 발생할 수 있으므로 Spring Boot DevTools 비활성화
 
+## 5. Request 예시
+`localhost:8080/send`
+```json
+{
+    "roomId": "room1",
+    "userId": "user1",
+    "content": "Hello from 1"
+}
+```
+
+## 6. Response 예시
+`localhost:8080/room1`
+```json
+[
+    {
+        "roomId": "room1",
+        "messageId": "01JMCVENRJTBZ7XYBS5R5FTAYT",
+        "userId": "user1",
+        "content": "Hello from 1",
+        "timestamp": "1739893200658"
+    },
+    {
+        "roomId": "room1",
+        "messageId": "01JMCVG83JRF6TXRZGCZTJXHTY",
+        "userId": "user2",
+        "content": "Hello from 2",
+        "timestamp": "1739893252210"
+    }
+]
+```
